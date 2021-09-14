@@ -62,7 +62,7 @@ Night
 **[Blastoid scRNAseq processing](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/)
 =====================================================================================
 
-1 Blastoid[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#blastoid) {.hasAnchor}
+1 Blastoid[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#blastoid)
 ==========================================================================
 
 Read preprocessing[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#read-preprocessing) {.hasAnchor}
