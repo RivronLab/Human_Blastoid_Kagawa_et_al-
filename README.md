@@ -30,31 +30,7 @@
 
 [**](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/# "Share")
 
-Facebook
-
-Twitter
-
-LinkedIn
-
-Weibo
-
-Instapaper
-
 [**](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/# "Font Settings")
-
-A
-
-A
-
-Serif
-
-Sans
-
-White
-
-Sepia
-
-Night
 
 [**](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/# "Information about the toolbar")
 
@@ -64,7 +40,7 @@ Night
 1 Blastoid[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#blastoid)
 ==========================================================================
 
-Read preprocessing[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#read-preprocessing) {.hasAnchor}
+Read preprocessing[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#read-preprocessing)
 --------------------------------------------------------------------------------------------
 
 Raw reads can be obtained from
@@ -78,7 +54,7 @@ using hisat2 v2.2.1. Uniquely mapping reads in genes were quantified
 using htseq-count v0.13.5 with parameter -s no. TPM estimates were
 obtained using RSEM v1.3.3 with parameter –single-cell-prior
 
-Loading packages and preprocessed data[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#loading-packages-and-preprocessed-data) {.hasAnchor}
+Loading packages and preprocessed data[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#loading-packages-and-preprocessed-data)
 ------------------------------------------------------------------------------------------------------------------------------------
 
 -   Raw count data and metadata files can be obtained from NCBI GEO
@@ -117,7 +93,7 @@ rownames(meta.all) <- meta.all$sampleid
 mtname="^ENSG[[:digit:]]+-MT-"
 ```
 
-Filtering[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#filtering) {.hasAnchor}
+Filtering[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#filtering)
 --------------------------------------------------------------------------
 
 Based on initial evaluation of per-cell quality control metrices and
@@ -136,7 +112,7 @@ counts.filter <- counts.all[,rownames(meta.filter)]
 sobj <- CreateSeuratObject(counts.filter, min.cells = 5, meta.data = meta.filter)
 ```
 
-Data Analysis[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#data-analysis) {.hasAnchor}
+Data Analysis[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#data-analysis)
 ----------------------------------------------------------------------------------
 
 Count-data were log-normalized, top 3000 highly variable were selected,
@@ -172,10 +148,10 @@ sobj <- sobj %>% Seurat::NormalizeData(verbose = FALSE) %>%
     ## To use Python UMAP via reticulate, set umap.method to 'umap-learn' and metric to 'correlation'
     ## This message will be shown once per session
 
-Data Visualization[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#data-visualization) {.hasAnchor}
+Data Visualization[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#data-visualization)
 --------------------------------------------------------------------------------------------
 
-### UMAP/Sampletime[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapsampletime) {.hasAnchor}
+### UMAP/Sampletime[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapsampletime)
 
 UMAP projection colored according to sample time
 
@@ -194,7 +170,7 @@ print(p)
 
 ![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-sampletime-1.png)
 
-### UMAP/Clusters[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapclusters) {.hasAnchor}
+### UMAP/Clusters[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapclusters)
 
 UMAP projection colored according to cluster identity at various
 resolutions
@@ -214,7 +190,7 @@ for(Resolution in ResolutionList){
 
 ![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-cluster-1.png)![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-cluster-2.png)
 
-### UMAP/Marker[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapmarker) {.hasAnchor}
+### UMAP/Marker[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#umapmarker)
 
 UMAP projection colored according to expression of selected EPI, TE, and
 PrE markers
@@ -235,7 +211,7 @@ for(set in names(markers.list)){
 
 ![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-markers-1.png)![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-markers-2.png)![](./Blastoid%20scRNAseq%20processing_files/blastoid-data-analysis-umap-markers-3.png)
 
-### Marker Heatmap[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#marker-heatmap) {.hasAnchor}
+### Marker Heatmap[](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/#marker-heatmap)
 
 Identify top markers based on avg\_log2FC at resolution 0.02 and display
 their expression in a row-scaled heatmap sorted by cluster and sample
