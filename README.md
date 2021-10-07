@@ -1,4 +1,3 @@
-Type to search
 
 -   [****1**
     Blastoid](https://data.bioinfo.vbc.ac.at/rivron.grp/blastoid/blastoid.html)
